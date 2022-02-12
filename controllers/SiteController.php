@@ -99,6 +99,13 @@ class SiteController extends Controller
         
     }
     
+    public function actionUtylizacja($id){
+        $post = Posty::findOne($id)->delete();
+        if($post){
+            Yii::$app->getSession()->setFlash('message', 'Post Usuniety Pomyslnie');
+            return $this->redirect(['index']);
+        }
+    }
 
     /**
      * Login action.
