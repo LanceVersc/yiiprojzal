@@ -82,6 +82,11 @@ class SiteController extends Controller
         return $this->render('utworz', ['post' => $post]);
     }
 
+    public function actionWidok($id){
+        $post = Posty::findOne($id);
+        return $this->render('widok', ['post' => $post]);
+    }
+
     /**
      * Login action.
      *

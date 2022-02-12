@@ -45,9 +45,9 @@ $this->title = 'Aplikacja CRUD w YII2 Framework';
                         <td><?php echo $post->opis;?></td>
                         <td><?php echo $post->kategoria;?></td>
                         <td>
-                            <span><?= Html::a('Zobacz') ?></span>
-                            <span><?= Html::a('Zaktualizuj') ?></span>
-                            <span><?= Html::a('Usun') ?></span>
+                            <span><?= Html::a('Zobacz', ['widok', 'id' => $post->id], ['class' => 'btn btn-primary']) ?></span>
+                            <span><?= Html::a('Zaktualizuj', ['aktualizacja', 'id' => $post->id], ['class' => 'btn btn-success']) ?></span>
+                            <span><?= Html::a('Usun', ['utylizacja', 'id' => $post->id], ['class' => 'btn btn-danger']) ?></span>
                         </td>
                     </tr>
                         <?php endforeach; ?>
