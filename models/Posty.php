@@ -10,9 +10,9 @@
         private $opis;
         private $kategoria;
 
-        public function zasady(){
+        public function rules(){
             return[
-                [['tytul', 'opis', 'kategoria'], 'wymagane']  
+                [['tytul', 'opis', 'kategoria'], 'required']  
             ];
         }
     }

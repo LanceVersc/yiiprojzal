@@ -67,6 +67,21 @@ class SiteController extends Controller
         return $this->render('home', ['posty' => $posty]);
     }
 
+    public function actionUtworz(){
+        $post = new Posty();
+        $formData = Yii::$app->request->post();
+        if($post->load($formData)){
+            if($post->save()){
+                Yii::$app->getSession()->setFlash('message', 'Post Opublikowany Pomyslnie');
+                return $this->redirect(['index']);
+            }
+            else{
+                Yii::$app->getSession()->setFlash('message', 'Nie udalo sie Opublikowac Postu');
+            }
+        }
+        return $this->render('utworz', ['post' => $post]);
+    }
+
     /**
      * Login action.
      *
