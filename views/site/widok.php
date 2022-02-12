@@ -16,19 +16,19 @@ $this->title = 'Aplikacja CRUD w YII2 Framework';
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 
-                <?php echo $post->tytul; ?>
+                <b>Tytul:</b> <?php echo $post->tytul; ?>
 
             </li>
 
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 
-                <?php echo $post->opis; ?>
+                <b>Opis:</b> <?php echo $post->opis; ?>
 
             </li>
             
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 
-                <?php echo $post->kategoria; ?>
+                <b>Kategoria:</b> <?php echo $post->kategoria; ?>
 
             </li>
         </ul>
