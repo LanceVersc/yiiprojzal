@@ -9,7 +9,12 @@ $this->title = 'Aplikacja CRUD w YII2 Framework';
 <div class="site-index">
 
 <?php if(yii::$app->session->hasFlash('message')):?>
-    <?php echo yii::$app->session->getFlash('message');?>
+
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-bs-dismiss="alert"></button>
+        <?php echo yii::$app->session->getFlash('message');?>
+    </div>
+
 <?php endif;?>
 
     <div class="jumbotron text-center bg-transparent">

@@ -87,6 +87,19 @@ class SiteController extends Controller
         return $this->render('widok', ['post' => $post]);
     }
 
+    public function actionAktualizacja($id){
+        $post = Posty::findOne($id);
+        if( $post->load(Yii::$app->request->post()) && $post->save() ){
+            Yii::$app->getSession()->setFlash('message', 'Post Zaktualizowany Pomyslnie');
+            return $this->redirect(['index', 'id' => $post->id]);
+        }
+        else{
+            return $this->render('aktualizacja', ['post' => $post]);
+        }
+        
+    }
+    
+
     /**
      * Login action.
      *
